@@ -62,3 +62,26 @@ function componentB() {
 Bộ đệm tồn tại trong suốt thời gian tồn tại của yêu cầu máy chủ cho đến khi component render xong.
 
 ### Data Cache
+
+Next.js có Bộ đệm dữ liệu tích hợp sẵn để duy trì kết quả tìm nạp dữ liệu qua các yêu cầu và triển khai máy chủ đến. Vì next.js đã mở rộng hàm `fetch` api, cho phép mỗi yêu cầu trên máy chủ có bộ nhớ đệm thiết lập của riêng nó.
+
+![Caching next](../images/cache-works.png)
+
+- Lần đầu tiên một yêu cầu tìm nạp ( `fetch` ) có tùy chọn 'force-cache' được gọi trong khi kết xuất, Next.js sẽ kiểm tra Bộ đệm dữ liệu để tìm phản hồi được lưu trong bộ nhớ đệm. Nếu phản hồi được lưu trong bộ nhớ đệm sẽ được trả về ngay lập tức.
+- Nếu không tìm thấy phản hồi được lưu trong bộ nhớ đệm, yêu cầu sẽ được gửi tới nguồn dữ liệu, kết quả sẽ được lưu trữ trong Bộ nhớ đệm dữ liệu và được ghi nhớ.
+- Đối với dữ liệu không được lưu vào bộ nhớ đệm ( sử dụng: `{cache: 'no-store'}` ), kết quả sẽ luôn được tìm và gọi.
+- Cho dù dữ liệu được lưu vào bộ nhớ đệm hay không được lưu vào bộ đệm, các yêu cầu luôn được ghi nhớ để tránh tạo các yêu cầu trùng lặp cho cùng một dữ liệu trong quá trình kết xuất React.
+
+**Sự khác nhau giữa `Data Cache` và `Request Memoization`**
+
+> Cả hai cơ chế đều giúp cải thiện hiệu suất bằng cách sử dụng lại dữ liệu đã lưu trong bộ nhớ đệm, nhưng `Data Cache` vẫn tồn tại liên tục trong các yêu cầu và quá trình triển khai đến, trong khi `Request Memoization` chỉ kéo dài thời gian tồn tại của yêu cầu.
+
+### Revalidating
+
+#### Time-based Revalidation
+
+`revalidate`: Xác thực lại dữ liệu theo một khoảng thời gian đã định sẵn, thời gian tồn tại của bộ đệm (tính bằng giây).
+
+```tsx
+fetch("https://...", { next: { revalidate: 3600 } });
+```
