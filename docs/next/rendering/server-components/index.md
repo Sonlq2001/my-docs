@@ -39,3 +39,88 @@ Cho phép giao diện của người dùng được kết xuất và lưu vào b
 6. Sử dụng Server Components giúp giảm lượng JavaScript cần tải và xử lý trên client, cải thiện hiệu năng tổng thể.
 
 ### Server Rendering Strategies
+
+Next.js được chia làm 3 dạng render chính
+
+- `Static`: Trang HTML được tạo sẵn trong quá trình build, thích hợp cho nội dung ít thay đổi.
+- `Dynamic`: Trang được render tại thời gian chạy ( runtime ) khi có yêu cầu từ người dùng, phù hợp cho nội dung động.
+- `Streaming`: Render từng phần của trang và gửi từng phần về client, giúp tối ưu hiệu suất và trải nghiệm người dùng khi xử lý phức tạp.
+
+#### Static Rendering (Default)
+
+- `Static rendering` rất hữu ích khi tuyến đường có dữ liệu tĩnh, ít có sự thay đổi cập nhập, chẳng hạn như bài đăng blog tĩnh hoặc trang sản phẩm.
+- Khi chạy lệnh `npm run build` trong dự án Next.js, sẽ thấy những file được có ký hiệu `o` ở đầu là những file được render với cơ chế `static`.
+
+  ![static render](../../images/static-render.png)
+
+- Khi thực hiện build xong, trong thư mục build, sẽ chứa luôn file `.html` tương ứng với các file được render với cơ chế `static`.
+
+  ![static render](../../images/static-render-html.png)
+
+> Next.js sẽ dùng `Static rendering` khi có thể, đây là cơ chế mặc định.
+
+:::tip [Lưu ý]
+Chúng ta dùng `dynamic function` trong page sẽ bị chuyển sang `Dynamic rendering`
+
+- cookies()
+- headers()
+- unstable_noStore()
+- unstable_after():
+- searchParams prop
+
+:::
+
+#### Dynamic Rendering
+
+Ngược lại với `Static rendering`, `Dynamic Rendering` sẽ được render tại thời điểm người dùng yêu cầu ( vd: `truy cập vào trang detail, tại thời điểm đó trang mới bắt đầu được render` )
+
+Được có ký hiệu `f` ở đầu là những file được render với cơ chế `dynamic`.
+
+![dynamic render](../../images/dynamic-render.png)
+
+Và ở trong thư mục build sẽ `không` có file `.html` tương ứng.
+
+![dynamic render](../../images/static-render-empty.png)
+
+#### Streaming
+
+Hiển thị dần dần giao diện người dùng từ máy chủ. tới khi client sẵn sàng hiển thị. Điều này cho phép người dùng xem các phần của trang ngay lập tức trước khi toàn bộ nội dung hiển thị xong.
+
+![dynamic render](../../images/streaming-render.png)
+
+Có thể sử dụng file `loading.js` và `React Suspense` để thực hiện cơ chế này.
+
+```tsx
+// component sẽ được streaming rendering
+async function ListProduct() {
+  const products = await getListProducts();
+  return (
+    <div className="flex gap-5">
+      {products.map((item) => (
+        <div key={item.id} className="border p-2">
+          {item.name}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default async function page({ params }: { params: { id: string } }) {
+  const product = await getProduct(params.id);
+  return (
+    <>
+      <div className="border w-fit p-3">
+        <p>name: {product.name}</p>
+      </div>
+      {/* steaming render */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <ListProduct />
+      </Suspense>
+    </>
+  );
+}
+```
+
+Trong ví dụ trên khi tải lại trang, `loading` trong `fallback` của `Suspense` sẽ được hiển thị trước, khi nào dữ liệu đã tải xong thì mới bắt đầu hiển thị dữ liệu thật.
+
+> Phù hợp với các page có logic xử lý phức tạp cần thời gian code xử lý và chạy.

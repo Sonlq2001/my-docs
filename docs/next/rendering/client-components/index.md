@@ -31,10 +31,18 @@ export default function Counter() {
 
 :::tip[Lưu ý]
 Có thể thêm nhiều `"use client"` trong thành phần React, cho phép chia nhỏ ứng dụng thành nhiều Client component.
+
+> Khi dùng các `hook` trong React, truy cập `localStorage` bắt bược phải thêm `"use client"`, nếu không sẽ bị lỗi.
+
 :::
 
 ### Client Components Rendered ?
 
-:::tip[Lưu ý]
+:::info[Thông tin thêm]
 Hydrat hóa là quá trình gắn trình xử lý sự kiện vào DOM để làm cho HTML tĩnh có tính tương tác
 :::
+
+1. Lần render đầu tiên sẽ được render phía server.
+2. Thực thiện hydration trên Client, quá trình này gắn thêm các logic, event JavaScript, vào phần HTML tĩnh đã render sẵn.
+3. Sau khi hydration hoàn tất, người dùng có thể tương tác với component, như thay đổi state, gửi form, click, v.v
+4. Các lần render tiếp theo phía client sẽ chịu trách nghiệm.
