@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Server component
+# Server Component
 
 Cho phép giao diện của người dùng được kết xuất và lưu vào bộ nhớ đệm ở phía máy chủ.
 
