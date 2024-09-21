@@ -1,4 +1,4 @@
-# Client component
+# Client Component
 
 Cho phép viết giao diện người dùng tương tác được hiển thị trước trên máy chủ và có thể sử dụng JavaScript máy khách để chạy trong trình duyệt. ( Kết xuất giao diện phía client )
 
