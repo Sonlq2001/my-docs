@@ -6,13 +6,13 @@ sidebar_label: Composition Patterns
 
 Cần xem xét thích hợp cho các thành phần của ứng dụng, khi nào nên dùng `Client component` và `Server component` để đạt được hiệu quả cao nhất.
 
-### When to use Server and Client Components?
+## When to use Server and Client Components?
 
 ![ssr works](../../images/when-use-client-server-component.png)
 
-### Server Component Patterns
+## Server Component Patterns
 
-#### Sharing data between components
+### Sharing data between components
 
 Khi `fetch` dữ liệu từ `Server component`, có thể bạn muốn truyền dữ liệu xuống các thành phần con để sử dụng, các thành phần phụ thuộc vào cùng 1 dữ liệu. Thông thường ta sẽ truyền `props` từ component `cha` xuống component `con` hoặc có thể dùng `state management`. Nhưng đối với Next.js thì sẽ không cần phải làm như vậy.
 
@@ -44,7 +44,7 @@ export default async function Page() {
 }
 ```
 
-#### Server only
+### Server only
 
 `Server only` giúp cho các đoạn mã của chúng ta chỉ được thực hiện trên `server` và không bao giờ bị truyền xuống `client`. Đặc biệt hữu ích với các thông tin nhạy, logic phía server như: tương tác với CSDL, thư viện chỉ dành cho môi trường server, api key, refresh token.... Giúp cho ứng dụng bảo mật và an toàn hơn.
 
@@ -70,7 +70,7 @@ export async function getData() {
 // Client sẽ không thể nào gọi và sử dụng được function getData này.
 ```
 
-#### Using Third-party Packages
+### Using Third-party Packages
 
 Khi sử dụng các thư viện, gói bên thứ 3, hỗ trợ cho việc xây dựng phía `Client component` cần sử dụng `use client`. Vì các thư viện, gói dó có sử dụng các tính năng `hook` của React. Nếu không sẽ bị lỗi.
 
@@ -93,7 +93,7 @@ export default function Gallery() {
 }
 ```
 
-#### Using Context Providers
+### Using Context Providers
 
 Không thể dùng `trực tiếp` `createContext` trong server component được. Cần phải tách riêng `Client component` sử dụng `createContext` và bao bọc các thành phần con dưới dạng `children`.
 
@@ -131,9 +131,9 @@ export default function RootLayout({
 }
 ```
 
-### Client Component Patterns
+## Client Component Patterns
 
-#### Moving Client Components Down the Tree
+### Moving Client Components Down the Tree
 
 Trong 1 page sẽ gồm rất nhiều các thành phần khác nhau, nhưng đối với các thành phần tĩnh hiển thị ra giao diện `nên` dùng `Server component`, để tối ưu hiệu năng và hỗ trợ tốt cho `SEO`. Các thành phần liên quan đến tương tác hãy dùng `Client component`.
 
@@ -157,13 +157,13 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 }
 ```
 
-#### Passing props from Server to Client Components (Serialization)
+### Passing props from Server to Client Components (Serialization)
 
 Có thể truyền dữ liệu từ `Server component` xuống `Client component` thông qua `props` nhưng cần phải được tuần tự hóa bởi React (`serializable`)
 
 > Cũng có thể truyền từ `Client compomnet` xuống `Server component`.
 
-### Interleaving Server and Client Components
+## Interleaving Server and Client Components
 
 Có thể linh hoạt lồng `Server component` và `Client component` với nhau nhưng cần lưu ý:
 

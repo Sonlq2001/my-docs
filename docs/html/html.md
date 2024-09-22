@@ -8,7 +8,7 @@ Ngôn ngữ đánh dấu siêu văn bản hay HTML là ngôn ngữ đánh dấu 
 
 Tài liệu HTML về cơ bản là một cây nút, bao gồm các phần tử HTML và nút văn bản. Các phần tử HTML cung cấp ngữ nghĩa và định dạng cho tài liệu, bao gồm tạo đoạn văn, danh sách và bảng cũng như nhúng hình ảnh và điều khiển biểu mẫu. Mỗi phần tử có thể có nhiều thuộc tính được chỉ định. Nhiều phần tử có thể có nội dung, bao gồm các phần tử và văn bản khác. Các phần tử khác trống, có thẻ và thuộc tính xác định chức năng của chúng.
 
-### Element
+## Element
 
 Các phần tử HTML được mô tả bằng các thẻ, được viết bằng dấu ngoặc nhọn (< và >).
 
@@ -37,7 +37,7 @@ Các thẻ tự đóng.
 
 VD: `<img />`, `<input />`, `<link />`, `<br />`, `<hr />`
 
-### Attributes
+## Attributes
 
 Thuộc tính cung cấp thông tin về phần tử. Thuộc tính chỉ được viết trong thẻ mở của element. Được viết dạng `key="value"`.
 

@@ -2,12 +2,12 @@
 
 Cho phép viết giao diện người dùng tương tác được hiển thị trước trên máy chủ và có thể sử dụng JavaScript máy khách để chạy trong trình duyệt. ( Kết xuất giao diện phía client )
 
-### Benefits of Client Rendering
+## Benefits of Client Rendering
 
 - `Interactivity`: có thể sử dụng được các hook, side effect của react, hiệu ứng và sự kiện, tương tác phản hồi trực tiếp với người dùng.
 - `Browser APIs`: có quyền truy cập vào API trình duyệt ( `localStorage, sessionStorage` )
 
-### Using Client Components in Next.js
+## Using Client Components in Next.js
 
 Thêm `"use client"` vào đầu tệp tin, phía trên các mục nhập của bạn. Được sử dụng để phân biệt giữa các thành phần `Client component ( "use client" )` và `Server Component ( "use server" )`
 
@@ -36,7 +36,7 @@ Có thể thêm nhiều `"use client"` trong thành phần React, cho phép chia
 
 :::
 
-### Client Components Rendered ?
+## Client Components Rendered ?
 
 :::info[Thông tin thêm]
 Hydrat hóa là quá trình gắn trình xử lý sự kiện vào DOM để làm cho HTML tĩnh có tính tương tác

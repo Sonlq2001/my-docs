@@ -1,6 +1,6 @@
 # Caching
 
-### Caching in Next.js
+## Caching in Next.js
 
 Next.js cải thiện hiệu suất ứng dụng và giảm chi phí bằng cách lưu vào bộ nhớ đệm công việc kết xuất và yêu cầu dữ liệu. Theo mặc định, Next.js sẽ lưu vào bộ nhớ đệm nhiều nhất có thể để cải thiện hiệu suất và giảm chi phí.
 Có nghĩa là các tuyến đường được hiển thị tĩnh và các yêu cầu dữ liệu được lưu vào bộ nhớ đệm trừ bản hủy bỏ.
@@ -9,7 +9,7 @@ Có nghĩa là các tuyến đường được hiển thị tĩnh và các yêu 
 
 Hành vi của bộ nhớ đệm thay đổi tùy thuộc vào việc tuyến đường được hiển thị tĩnh hay động, dữ liệu được lưu vào bộ nhớ đệm hay không được lưu vào bộ đệm và liệu yêu cầu có phải là một phần của lượt truy cập đầu tiên hay điều hướng tiếp theo hay không. Tùy thuộc vào trường hợp sử dụng của bạn, bạn có thể định cấu hình hành vi lưu vào bộ nhớ đệm cho từng tuyến đường và yêu cầu dữ liệu.
 
-### Request Memoization
+## Request Memoization
 
 ![Caching next](../images/request-memoization.png)
 
@@ -47,7 +47,7 @@ function componentB() {
  */
 ```
 
-#### Cách hoạt động của tính năng ghi nhớ yêu cầu
+### Cách hoạt động của tính năng ghi nhớ yêu cầu
 
 ![Caching next](../images/request-memoization-works.png)
 
@@ -61,7 +61,7 @@ function componentB() {
 
 Bộ đệm tồn tại trong suốt thời gian tồn tại của yêu cầu máy chủ cho đến khi component render xong.
 
-### Data Cache
+## Data Cache
 
 Next.js có Bộ đệm dữ liệu tích hợp sẵn để duy trì kết quả tìm nạp dữ liệu qua các yêu cầu và triển khai máy chủ đến. Vì next.js đã mở rộng hàm `fetch` api, cho phép mỗi yêu cầu trên máy chủ có bộ nhớ đệm thiết lập của riêng nó.
 
