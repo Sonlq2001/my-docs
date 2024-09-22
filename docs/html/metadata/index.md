@@ -2,9 +2,9 @@
 
 Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thông tin, thông số kĩ thuật, tối ưu hóa công cụ tìm kiếm ... cho ứng dụng.
 
-### The required `<meta>` tags
+## The required `<meta>` tags
 
-#### Meta Charset Tag
+### Meta Charset Tag
 
 ```html title='Example'
 <meta charset="UTF-8" />
@@ -12,7 +12,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Thẻ meta charset, cụ thể là meta charset=”UTF-8″>, có liên quan chặt chẽ hơn đến việc phát triển web và đảm bảo rằng trang web có mã hóa ký tự phù hợp hơn là SEO (tối ưu hóa công cụ tìm kiếm). Nhưng bằng cách đảm bảo rằng nội dung được hiển thị chính xác, điều này có thể ảnh hưởng đến trải nghiệm người dùng và việc thu thập dữ liệu của công cụ tìm kiếm, nó sẽ gián tiếp ảnh hưởng đến SEO.
 
-#### Meta Title Tag
+### Meta Title Tag
 
 ```html title='Example'
 <title>My docs</title>
@@ -22,7 +22,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Cung cấp tiêu đề của trang web trong kết quả tìm kiếm. Thẻ tiêu đề phải rõ ràng và ngắn gọn và phù hợp với nội dung của trang. Đây là yếu tố quan trọng nhất mà các công cụ tìm kiếm xem xét khi xếp hạng các trang của bạn.
 
-#### Meta Viewport Tag
+### Meta Viewport Tag
 
 ```html title='Example'
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,9 +30,9 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Thẻ khung nhìn được sử dụng để đo kích thước và chia tỷ lệ nhằm mang lại trải nghiệm người dùng tốt hơn trên các kích thước màn hình khác nhau. Nên sử dụng thẻ `<viewport>` trong tài liệu vì thẻ khung nhìn là yếu tố xếp hạng trong kết quả tìm kiếm.
 
-### Important meta tags
+## Important meta tags
 
-#### Meta description tag
+### Meta description tag
 
 ```html title='Example'
 <meta name="description" content="Short Description" />
@@ -40,7 +40,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Là yếu tố cơ bản trong tối ưu hóa công cụ tìm kiếm (SEO) và phát triển web. Nó là một thuộc tính HTML cung cấp bản tóm tắt ngắn gọn và súc tích về nội dung trên trang web. Các công cụ tìm kiếm như Google thường hiển thị mô tả này trong kết quả tìm kiếm của họ để giúp người dùng hiểu nội dung của một trang web cụ thể.
 
-#### Meta keyword tag
+### Meta keyword tag
 
 ```html title='Example'
 <meta name="keywords" content="HTML, SEO" />
@@ -48,7 +48,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Thẻ từ khóa meta cung cấp các từ khóa về nội dung của trang web được sử dụng để lập chỉ mục và xếp hạng trang web trong kết quả tìm kiếm.
 
-#### Meta Robots Meta Tag
+### Meta Robots Meta Tag
 
 ```html title='Example'
 <meta name="robots" content="index, follow" />
@@ -61,7 +61,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 > - "noindex": Không lập chỉ mục trang
 > - "nofollow": Đừng theo các liên kết
 
-#### Meta Canonical Tag
+### Meta Canonical Tag
 
 ```html title='Example'
 <link rel="canonical" href="URL_of_preferred_page" />
@@ -69,7 +69,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Khi có nhiều phiên bản của cùng một thông tin, thẻ chuẩn, còn được gọi là thẻ “rel=canonical”, là một thành phần HTML được sử dụng trong tối ưu hóa công cụ tìm kiếm (SEO) để chỉ định phiên bản chuẩn hoặc phiên bản ưa thích của một trang web. Nó hỗ trợ các công cụ tìm kiếm xác định phiên bản của trang cần được lập chỉ mục và hiển thị trong kết quả tìm kiếm. Thẻ canonical đặc biệt hữu ích trong việc giải quyết những khó khăn với nội dung trùng lặp.
 
-#### Meta Hreflang Tag
+### Meta Hreflang Tag
 
 ```html title='Example'
 <link rel="alternate" href="URL_of_alternate_page" hreflang="language_code" />
@@ -77,7 +77,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Một phần tử HTML thiết yếu để tối ưu hóa công cụ tìm kiếm (SEO) là thẻ hreflang, thẻ này xác định ngôn ngữ và nhắm mục tiêu theo địa lý của các trang trực tuyến. Thẻ này hữu ích cho các trang web nước ngoài hoặc đa ngôn ngữ vì nó cho phép các công cụ tìm kiếm hiểu ngôn ngữ và nhắm mục tiêu theo địa lý của nội dung trang.
 
-#### Meta Author Tag
+### Meta Author Tag
 
 ```html title='Example'
 <meta name="author" content="Author's Name" />
@@ -85,7 +85,7 @@ Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thô
 
 > Thẻ `<meta name=”author”>` là một thành phần HTML có thể được sử dụng để chỉ định tác giả của nội dung trang web. Mặc dù thẻ này không phải là yếu tố xếp hạng chính trong SEO nhưng nó vẫn có thể mang lại một số lợi ích, đặc biệt là về mặt phân bổ và độ tin cậy.
 
-#### Social Media Meta Tags
+### Social Media Meta Tags
 
 `1. og:title`
 

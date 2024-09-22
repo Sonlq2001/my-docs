@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Cho phép giao diện của người dùng được kết xuất và lưu vào bộ nhớ đệm ở phía máy chủ.
 
-### Benefits of Server Rendering
+## Benefits of Server Rendering
 
 - `Data Fetching`: cho phép bạn di chuyển tìm nạp dữ liệu đến máy chủ, gần nguồn dữ liệu của bạn hơn. Giảm thời gian tìm nạp dữ liệu cần thiết để hiển thị và số lượng mà người dùng yêu cầu.
 - `Security`: cho phép lưu giữ dữ liệu và logic nhạy cảm trên máy chủ, chẳng hạn như mã thông báo và khóa API mà không có nguy cơ để lộ chúng cho máy khách.
@@ -16,11 +16,11 @@ Cho phép giao diện của người dùng được kết xuất và lưu vào b
 - `Search Engine Optimization and Social Network Shareability`: Hỗ trợ tốt cho việc SEO ứng dụng.
 - `Streaming`: Thành phần máy chủ cho phép bạn chia công việc kết xuất thành nhiều phần và truyền chúng đến máy khách khi chúng sẵn sàng. Điều này cho phép người dùng xem các phần của trang sớm hơn mà không cần phải đợi toàn bộ trang được hiển thị trên máy chủ.
 
-### Using Server Components in Next.js
+## Using Server Components in Next.js
 
 > Theo mặc định next.js đã cấu hình `Server component`. Điều này cho phép tự động triển khai kết xuất máy chủ mà không cần cấu hình bổ sung.
 
-### Server Components rendered?
+## Server Components rendered?
 
 ![ssr works](../../images/how-ssr-works.png)
 
@@ -38,7 +38,7 @@ Cho phép giao diện của người dùng được kết xuất và lưu vào b
    > Nếu trang bao gồm cả Client Components (những component yêu cầu tương tác trực tiếp từ người dùng hoặc xử lý trên trình duyệt), Next.js sẽ gửi mã JavaScript của các Client Components đó đến client. Sau đó, quá trình hydration sẽ diễn ra, nghĩa là Next.js sẽ gắn các sự kiện và logic cho các Client Components khi trang đã được tải trên client.
 6. Sử dụng Server Components giúp giảm lượng JavaScript cần tải và xử lý trên client, cải thiện hiệu năng tổng thể.
 
-### Server Rendering Strategies
+## Server Rendering Strategies
 
 Next.js được chia làm 3 dạng render chính
 
@@ -46,7 +46,7 @@ Next.js được chia làm 3 dạng render chính
 - `Dynamic`: Trang được render tại thời gian chạy ( runtime ) khi có yêu cầu từ người dùng, phù hợp cho nội dung động.
 - `Streaming`: Render từng phần của trang và gửi từng phần về client, giúp tối ưu hiệu suất và trải nghiệm người dùng khi xử lý phức tạp.
 
-#### Static Rendering (Default)
+### Static Rendering (Default)
 
 - `Static rendering` rất hữu ích khi tuyến đường có dữ liệu tĩnh, ít có sự thay đổi cập nhập, chẳng hạn như bài đăng blog tĩnh hoặc trang sản phẩm.
 - Khi chạy lệnh `npm run build` trong dự án Next.js, sẽ thấy những file được có ký hiệu `o` ở đầu là những file được render với cơ chế `static`.
@@ -70,7 +70,7 @@ Chúng ta dùng `dynamic function` trong page sẽ bị chuyển sang `Dynamic r
 
 :::
 
-#### Dynamic Rendering
+### Dynamic Rendering
 
 Ngược lại với `Static rendering`, `Dynamic Rendering` sẽ được render tại thời điểm người dùng yêu cầu ( vd: `truy cập vào trang detail, tại thời điểm đó trang mới bắt đầu được render` )
 
@@ -82,7 +82,7 @@ Và ở trong thư mục build sẽ `không` có file `.html` tương ứng.
 
 ![dynamic render](../../images/static-render-empty.png)
 
-#### Streaming
+### Streaming
 
 Hiển thị dần dần giao diện người dùng từ máy chủ. tới khi client sẵn sàng hiển thị. Điều này cho phép người dùng xem các phần của trang ngay lập tức trước khi toàn bộ nội dung hiển thị xong.
 
