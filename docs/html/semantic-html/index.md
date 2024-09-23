@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Semantic HTML
 
 `Semantic` có nghĩa là "liên quan đến ý nghĩa". Viết HTML ngữ nghĩa có nghĩa là sử dụng các phần tử HTML để cấu trúc nội dung của bạn dựa trên ý nghĩa của từng phần tử chứ không phải hình thức của nó.

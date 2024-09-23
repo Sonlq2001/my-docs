@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Document structure
 
 Cầu trúc cơ bản của 1 file html.

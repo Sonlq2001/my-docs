@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Metadata
 
 Thẻ siêu dữ liệu được nằm trong thẻ `<head>` cung cấp các thông tin, thông số kĩ thuật, tối ưu hóa công cụ tìm kiếm ... cho ứng dụng.
