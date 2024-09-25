@@ -160,7 +160,28 @@ Chỉ được áp dụng cho phần tử mà thuộc tính được đặt.
 
 ### tabindex
 
-Thuộc tính tabindex có thể được thêm vào bất kỳ phần tử nào để cho phép nó nhận tiêu điểm. Giá trị tabindex xác định liệu nó có được thêm vào thứ tự tab hay không và tùy chọn vào thứ tự tab không mặc định.
+Thuộc tính tabindex có thể được thêm vào bất kỳ phần tử nào để cho phép nó nhận tiêu điểm.
+
+Thuộc tính tabindex nhận vào `1 số nguyên`. Giá trị âm (quy ước sử dụng -1) làm cho một phần tử có khả năng nhận tiêu điểm, nhưng không thêm vào chuỗi tab.Giá trị tabindex bằng `0` làm cho phần tử có thể lấy tiêu điểm và truy cập được thông qua tính năng lập thẻ, thêm nó vào thứ tự tab mặc định của trang theo thứ tự mã nguồn. Giá trị từ 1 trở lên sẽ đặt phần tử vào chuỗi tiêu điểm được ưu tiên và không được khuyến nghị.
+
+Khi người dùng nhấn phím `tab`, tiêu điểm sẽ di chuyển đến phần tử có thể lấy tiêu điểm tiếp theo như thể họ đã đặt `tabindex="0"`. Các phần tử khác không thể lấy nét theo mặc định. Việc thêm thuộc tính tabindex vào các phần tử đó sẽ cho phép chúng nhận được tiêu điểm trong khi lẽ ra chúng không nhận được tiêu điểm.
+
+```html
+<!-- Bấm vào input vào sau đó nhấn tab, các vị trí tab sẽ được di chuyển theo đúng thứ tự "tabindex" -->
+<ol>
+  <li><input tabindex="3" value="3" /></li>
+  <li><input tabindex="2" value="2" /></li>
+  <li><input tabindex="0" value="0" /></li>
+  <li><input tabindex="0" value="0" /></li>
+  <li><input tabindex="-1" value="-1" /></li>
+  <li><input tabindex="0" value="0" /></li>
+  <li><input tabindex="1" value="1" /></li>
+</ol>
+```
+
+:::warning[Lưu ý]
+Việc thay đổi thứ tự tab có thể tạo ra trải nghiệm người dùng thực sự tồi tệ. Không nên lạm dụng và sử dụng có mục đích và theo thứ tự nhất định.
+:::
 
 ### role
 
