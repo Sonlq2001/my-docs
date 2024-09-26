@@ -185,4 +185,20 @@ Việc thay đổi thứ tự tab có thể tạo ra trải nghiệm người d�
 
 ### role
 
+Cung cấp ý nghĩa ngữ nghĩa cho nội dung, cho phép trình đọc màn hình thông báo cho người dùng trang web về tương tác người dùng dự kiến ​​của đối tượng.
+
+```html title="Example"
+<div role="button">Button</div>
+<!-- thẻ div mang ý nghĩa là 1 button -->
+```
+
 ### contenteditable
+
+Cho phép biến 1 phần tử trở thành ô nhập văn bản
+
+```html title="Example"
+<div contenteditable></div>
+<!-- thẻ div có thẻ nhập được nội dung văn bản -->
+```
+
+## Custom attributes
