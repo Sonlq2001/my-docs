@@ -53,7 +53,7 @@ git status
 
 ## Git branch
 
-Hiển thị tất cả các nhánh hiện đang có ở local
+Giúp chúng ta xác định được vị trí đang ở nhánh nào và hiển thị tất cả các nhánh hiện đang có ở local
 
 ```bash
 git branch
@@ -96,6 +96,16 @@ git add path_file
 `git add index.html` đường dẫn file đằng sau (vd: `index.html`), sẽ chỉ định những file cần được sang `Staging area`
 :::
 
+## Git show
+
+Xem chi tiết mở rộng nội dung `commit`
+
+```bash
+git show id_commit
+```
+
+## Git diff
+
 ## Git commit
 
 Ghi lại các thay đổi vào kho lưu trữ.
@@ -107,6 +117,14 @@ git commit -m "message"
 :::tip[TIP]
 Cách đặt tên branch hay commit nên rõ ràng, thể hiện branch đó, commit đó thực hiện feature gì hay là fix bug gì... (thường thì sẽ theo quy định của công ty)
 :::
+
+### Git commit --amend
+
+Thêm flag `--amend`
+
+```bash
+git commit --amend -m "message"
+```
 
 ## Git log
 
@@ -142,4 +160,25 @@ Tạo ra 1 nhánh mới và chuyển sang nhánh đó
 
 ```bash
 git checkout -b branch_mane
+```
+
+### Git checkout file
+
+- Giúp sao chép, kiểm tra nội dung file trong 1 nhánh khác, `a` -> `b`
+- Giúp hoàn nguyên lại nội dung đã sửa trong file ( khi đẩy nhầm file không liên quan vào trong `commit` )
+
+```bash
+git checkout branch_name path_file
+```
+
+> Khi thực hiện thành công, các file sẽ được ở sẵn trạng thái `Staging area`
+
+## Git fetch
+
+Dùng để tải các cập nhập thay đổi từ các nhánh trên `remote` về `local` mà không cần `merge`.
+
+Cho phép bạn xem những thay đổi mới nhất mà không cần sửa đổi thư mục làm việc hiện tại của bạn.
+
+```bash
+git fetch
 ```
