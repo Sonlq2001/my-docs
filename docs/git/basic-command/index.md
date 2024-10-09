@@ -120,11 +120,17 @@ Cách đặt tên branch hay commit nên rõ ràng, thể hiện branch đó, co
 
 ### Git commit --amend
 
-Thêm flag `--amend`
+Dùng để sửa đổi lại `commit` gần nhất, thay đổi lại `commit` mới gần nhất
 
 ```bash
 git commit --amend -m "message"
 ```
+
+> Sử dụng `git push origin branch_name -f` để hoàn tất việc đưa commit lên.
+
+:::warning[Chú ý]
+Việc sử dụng `--amend` có thể gây nguy hiểm, do đã xáo chộn lịch sử `commit`, tránh thực hiện các thay đổi ghi lại lịch sử vào kho lưu trữ từ xa, đặc biệt nếu đang làm việc chung dự án và cùng repo cũng các thành viên khác.
+:::
 
 ## Git log
 
