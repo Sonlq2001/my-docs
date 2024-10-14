@@ -47,6 +47,36 @@ git reset --soft HEAD^n
 
 ## Git merge
 
+Gộp nhánh, hợp nhất nhánh này vào nhánh khác.
+
+Sau khi thực hiện `merge` sẽ tạo ra 1 `merge commit`, nếu có sung đột code giữa 2 nhánh (`conflict`), cần phải xử lý xong sau đó mới được `merge`.
+
+Chỉ có nhánh hiện tại được cập nhật để phản ánh sự hợp nhất, còn nhánh đích sẽ không bị ảnh hưởng.
+
+```bash
+git merge <branch_name>
+
+# merge tên nhánh được chỉ định <branch_name> vào nhánh hiện tại đang đứng
+```
+
+Hoặc
+
+```bash
+git merge <branch_a> <branch_b>
+
+# merge <branch_b> vào <branch_a>
+```
+
+![git-merge](./images/git-merge.png)
+
+### Git merge --continue
+
+Tiếp tục quá trình thực hiện `merge` code, sau khi đã giải quyết các `conflict` trong quá trình `merge`.
+
+```bash
+git merge --continue
+```
+
 ## Git cherry pick
 
 ## Git revert
