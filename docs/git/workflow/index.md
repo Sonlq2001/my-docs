@@ -120,8 +120,8 @@ Flow cơ bản làm việc với git trong dự án
 1. Clone project từ server về Local Repository
 2. Setup `git config` ( nếu cần )
 3. Clone project về xong, thường sẽ đứng ở luôn nhánh chính (`main`, `master` ..., `đây sẽ là nhánh mà code được hoàn chỉnh và build lên product`)
-4. Khi bắt đầu làm, cần chuyển sang nhánh khác, checkout từ nhánh `main`, vd: `feat/abc, fix/abc`
-5. Xây dựng phát triển logic, fixbug ở trên nhánh ta vừa tạo và checkout sang và `commit`
+4. Khi bắt đầu làm, cần chuyển sang nhánh khác, checkout từ nhánh `main` (có thể là 1 nhánh khác mà ta muốn `merge` code vào nhánh đó), vd: `feat/abc, fix/abc`
+5. Xây dựng phát triển logic, fixbug ở trên nhánh ta vừa tạo và `commit` trên nhánh đó
 6. Khi muốn đưa nội dung code sửa ở `local` lên `remote` để `review` và `merge`, cần phải `pull origin` nhánh `main` về để cập nhập lại code.
    > Vì làm việc teamwork có nhiều người code chung, không thể nào đảm bảo code ở máy local lúc nào cũng là code mới nhất, nên cần phải pull code mới từ nhánh main về, phòng trừ trường hợp bị `conflic code` thì sẽ cập nhập và sửa luôn.
 7. Đưa code lên `remote` và tạo `pull request`
