@@ -70,6 +70,14 @@ git checkout -m <oldname> <newname>
 - `oldname`: là nhánh mà bạn muốn đổi tên.
 - `newname`: là nhánh mới mà bạn muốn đổi tên sang.
 
+### Git branch -D
+
+Xóa 1 hay nhiều nhánh ở `local`.
+
+```bash
+git branch -D <branch_name1> <branch_name2>
+```
+
 ## Git add
 
 Đưa những file từ `Working directory` sang trạng thái `Staging area`. Trạng thái `sẵn sàng để thực hiện commit`.
@@ -149,6 +157,14 @@ git push origin branch_mane
 ```
 
 ### Git push -f
+
+### Git push origin --delete
+
+Xóa 1 hay nhiều nhánh ở `remote`
+
+```bash
+git push origin --delete <branch_name1> <branch_name2>
+```
 
 ## Git pull
 
