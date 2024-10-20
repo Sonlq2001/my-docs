@@ -3,7 +3,7 @@
 ## Caching in Next.js
 
 Next.js cải thiện hiệu suất ứng dụng và giảm chi phí bằng cách lưu vào bộ nhớ đệm công việc kết xuất và yêu cầu dữ liệu. Theo mặc định, Next.js sẽ lưu vào bộ nhớ đệm nhiều nhất có thể để cải thiện hiệu suất và giảm chi phí.
-Có nghĩa là các tuyến đường được hiển thị tĩnh và các yêu cầu dữ liệu được lưu vào bộ nhớ đệm trừ bản hủy bỏ.
+Có nghĩa là các tuyến đường được hiển thị tĩnh và các yêu cầu dữ liệu được lưu vào bộ nhớ đệm trừ bạn hủy bỏ.
 
 ![Caching next](../images/caching-next.png)
 
