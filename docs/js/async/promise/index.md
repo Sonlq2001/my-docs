@@ -108,7 +108,8 @@ Trong đó:
 :::info[Thông tin]
 
 - Nếu tất cả các Promise thành công, thì sẽ trả về 1 mảng các kết quả thành công.
-- Chỉ cần `1 Promise lỗi` trong danh sách các `Promise`, thì quá trình chạy sẽ bị `dừng lại` và trả về lỗi của `Promise` đang xảy ra lỗi.
+- Chỉ cần `1 Promise lỗi` trong danh sách các `Promise`, thì quá trình chạy sẽ bị `dừng lại` bất kể các Promise khác có thành công, sau đó trả về lỗi của `Promise` đang xảy ra lỗi.
+- Promise nào có thời gian chạy trả về lỗi nhanh nhất sẽ trả về.
 
 :::
 
@@ -156,16 +157,109 @@ Promise.all([promise1, promise2, promise3])
 
 Cú pháp tương tự với `Promise all`, khác ở chỗ:
 
-```js
-Promise.any([Promise1, Promise2, Promise3, ...])
- .then(result) => {
-   console.log(result)
- })
- .catch(error => console.log(`Error in promises ${error}`))
-```
+- Trường hợp Promise thành công, sẽ chỉ ra 1 kết quả của Promise có thời gian chạy nhanh nhất.
+- Chỉ trả về lỗi khi tất cả các Promise đều lỗi, nó sẽ đợi tất cả Promise chạy xong, rồi trả về lỗi `chung`.
 
-## Promise any
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(1);
+  }, 2000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(2);
+  }, 1000);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(3);
+  }, 500);
+});
+
+Promise.any([promise1, promise2, promise3])
+  .then((res) => {
+    console.log("success", res);
+  })
+  .catch((err) => {
+    console.log("fail", err);
+  });
+
+// promise3 có thời gian chạy nhanh nhất sẽ được trả về
+```
 
 ## Promise race
 
+Sẽ trả về `1 kết quả` của Promise có `thời gian chạy nhanh nhất`, `không quan tâm` đến `thành công` hay `thất bại`.
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(1);
+  }, 2000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve(2);
+  }, 1000);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject(3);
+  }, 3000);
+});
+
+Promise.race([promise1, promise2, promise3])
+  .then((res) => {
+    console.log("success", res);
+  })
+  .catch((err) => {
+    console.log("fail", err);
+  });
+
+// promise2 có thời gian chạy nhanh nhất sẽ được trả về
+```
+
 ## Promise all settled
+
+Sẽ trả về 1 mảng `tất cả` các kết quả của Promise, dù thành công hay thất bại.
+
+Giá trị trả về luôn thành công. ( Luôn nằm trong hàm `.then` để nhận kết quả trả về, dù tất cả các Promise đều thất bại )
+
+```js
+const promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject(1);
+  }, 2000);
+});
+
+const promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject(2);
+  }, 1000);
+});
+
+const promise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    reject(3);
+  }, 500);
+});
+
+Promise.allSettled([promise1, promise2, promise3])
+  .then((res) => {
+    console.log("success", res);
+  })
+  .catch((err) => {
+    console.log("fail", err);
+  });
+
+// cả 3 promise đều reject, nhưng kết quả vẫn nhận được ở hàm .then
+```
+
+Kết quả:
+
+![ex1-promise](../images/ex1-promise.png)
