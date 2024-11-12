@@ -60,7 +60,7 @@ useEffect(() => {
 
 Nếu như mảng `dependencies` của `useEffect` có giá trị, thì mỗi khi giá trị trong mảng `dependencies` đó thay đổi, thì `useEffect` sẽ được gọi lại.
 
-React sẽ chỉ bỏ qua việc chạy lại `Effect` nếu tất cả các phần phụ thuộc mà bạn chỉ định có cùng giá trị như chúng có trong lần kết xuất trước đó. React so sánh các giá trị phụ thuộc bằng cách sử dụng so sánh Object.is.
+React sẽ chỉ bỏ qua việc chạy lại `Effect` nếu tất cả các phần phụ thuộc mà bạn chỉ định có cùng giá trị như chúng có trong lần kết xuất trước đó. React so sánh các giá trị phụ thuộc bằng cách sử dụng so sánh `Object.is`.
 
 ```jsx
 const [count, setCount] = useState();
