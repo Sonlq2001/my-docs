@@ -85,4 +85,81 @@ Dùng `const` sẽ gay ra lỗi, do từ khóa `const` không thể gán lại l
 
 ## For in
 
+Dùng để lặp qua các thuộc tính của `1 object`.
+
+Là cách thức để duyệt qua tất cả các `key` (khóa) của một đối tượng hoặc các chỉ số của một mảng (mặc dù không nên dùng cho mảng).
+
+```js
+for (let key in object) {
+  // Thực thi với mỗi thuộc tính
+}
+```
+
+- `key` là biến được sử dụng để chứa tên của từng thuộc tính trong đối tượng.
+- `object` là đối tượng mà bạn muốn duyệt qua.
+
+```js
+const object = { false: "Hello World", a: 10, c: false };
+
+for (const key in object) {
+  console.log(key);
+}
+// false, a, c
+```
+
+:::info Thông tin
+Nên sử dụng `for ... in` để lặp qua các thuộc tính của 1 đối tượng.
+:::
+
+**Có thể lấy được giá trị của đối tượng**
+
+```js
+const object = { false: "Hello World", a: 10, c: false };
+
+for (const key in object) {
+  console.log(object[key]); // object[key]
+}
+// Hello World, 10, false
+```
+
 ## For of
+
+Được đùng để lặp qua các giá trị của 1 đối tượng `iterable` ( mảng, chuỗi, Map, Set ...)
+
+```js
+for (let value of iterable) {
+  // Thực thi với từng giá trị
+}
+```
+
+- value: Biến đại diện cho giá trị tại mỗi lần lặp.
+- iterable: Một đối tượng có thể lặp, chẳng hạn như mảng, chuỗi, Set, Map, hoặc các đối tượng có triển khai giao thức `Iterable`.
+
+**Các đối tượng hỗ trợ `for...of`**
+
+1. Array (Mảng)
+2. String (Chuỗi)
+3. Map
+4. Set
+5. TypedArray
+6. Arguments object
+7. Các đối tượng tùy chỉnh có cài đặt phương thức [Symbol.iterator].
+
+```js
+const myMap = new Map([
+  ["name", "John"],
+  ["age", 30],
+]);
+
+for (let [key, value] of myMap) {
+  console.log(`${key}: ${value}`);
+}
+// name: John
+// age: 30
+```
+
+| Đặc điểm         | for...of                         | for...in                            |
+| ---------------- | -------------------------------- | ----------------------------------- |
+| Lặp qua          | Giá trị trong iterable           | Key (tên thuộc tính) của đối tượng  |
+| Hỗ trợ iterable  | Có (mảng, chuỗi, Map, Set, v.v.) | Không bắt buộc (dành cho đối tượng) |
+| Sử dụng với mảng | Lấy giá trị trực tiếp            | Lấy chỉ số (index) của mảng         |
