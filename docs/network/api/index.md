@@ -57,3 +57,14 @@ Phản hồi của `API` sẽ bao gồm một mã trạng thái HTTP để chỉ
 - `404 Not Found`: Tài nguyên yêu cầu không tồn tại.
 - `500 Internal Server Error`: Có lỗi xảy ra bên trong server.
 - ....
+
+### More information
+
+Các loại api phổ biến.
+
+- `RESTful`
+- `SOAP`
+- `GraphQL`
+- `gRPC`
+- `Websocket`
+- `Webhook`
