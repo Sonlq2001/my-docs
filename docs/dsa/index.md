@@ -41,9 +41,41 @@ Nói cách khác, nó giống như một công thức nấu ăn, chỉ cho bạn
 
 `Fibonacci`
 
-Hai số `Fibonacci` đầu tiên là 0 và 1, số Fibonacci tiếp theo luôn là tổng của hai số trước đó nên ta được `0, 1, 1, 2, 3, 5, 8, 13, 21`,
+Là 1 dãy số mà trong đó:
+
+- Hai số `Fibonacci` đầu tiên là `0` và `1`, số Fibonacci tiếp theo luôn là tổng của hai số trước đó nên ta được `0, 1, 1, 2, 3, 5, 8, 13, 21`,
+
+**1. Sử dụng cách thông thường**
 
 ```js
 const fibo = [0, 1];
-for (let i = 2; i < 10; i++) {}
+for (let i = 2; i < 10; i++) {
+  fobi[i] = fobi[i - 1] + fobi[i - 2];
+}
+console.log(fobi); // [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
 ```
+
+**Ý tưởng**
+
+- Dãy số `Fibonacci` sẽ bắt đầu từ `0, 1`, sử dụng luôn 2 giá trị đó làm 2 phần tử đầu của mảng `[0, 1]`
+- Thực hiện lặp từ vị trí tiếp theo của dãy số `Fibonacci`, ta đã có 2 giá trị ban đầu là `0, 1` nên vị trí lặp tiếp theo sẽ bắt đầu từ vị trí thứ `3` trong dãy số.
+  - Nhưng `index` của mảng bắt đầu từ `0`, nên chỉ số `index` lặp tiếp theo sẽ bắt đầu từ `i = 2`
+
+```js
+for (let i = 2; i < 10; i++)
+```
+
+- `Số Fibonacci tiếp theo luôn là tổng của hai số trước đó`:
+  - Mà ta đã có 2 giá trị đầu tiên là `0, 1`, giá trị tiếp theo sẽ là `0 + 1 = 1`, dãy số là `0, 1, 1, ...`
+- Suy ra `A + B = C <=> C = (C - A) + (C - B)`
+  - `A`: giá trị phần tử đứng thứ `nhất` trong dãy số, `=> fobi[i - 1]`
+  - `B`: giá trị phần tử đứng thứ `hai` trong dãy số, `=> fobi[i - 2]`
+  - `C`: giá trị phần tử tiếp theo trong dãy số `Fibonacci` cần tìm, `=> fibo[i]`
+
+```js
+fobi[i] = fobi[i - 1] + fobi[i - 2];
+```
+
+![ex1](./images/ex1.png)
+
+**2. Sử dụng đệ quy (`Recursion`)**
