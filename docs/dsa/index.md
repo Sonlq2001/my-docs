@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Data Structures and Algorithms
 
 Là phần cơ bản của Khoa học Máy tính dạy bạn cách suy nghĩ và giải quyết các vấn đề phức tạp một cách có hệ thống.
@@ -79,3 +83,20 @@ fobi[i] = fobi[i - 1] + fobi[i - 2];
 ![ex1](./images/ex1.png)
 
 **2. Sử dụng đệ quy (`Recursion`)**
+
+```js
+function fibonacci(n) {
+  // Điều kiện dừng: Fibonacci(0) = 0, Fibonacci(1) = 1
+  if (n === 0) {
+    return 0;
+  }
+  if (n === 1) {
+    return 1;
+  }
+
+  // Câu lệnh đệ quy: Fibonacci(n) = Fibonacci(n-1) + Fibonacci(n-2)
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log(fibonacci(5)); // Output: 5
+```
