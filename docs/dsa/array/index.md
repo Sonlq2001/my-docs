@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Array
 
 Là loại cấu trúc dữ liệu lưu trữ nhiều thành phần dữ liệu lại với nhau.

@@ -49,7 +49,7 @@ for (let i = 0; i < n - 1; i++)
 
 - Vòng lặp ngoài sẽ lặp tối đa n - 1 lần (khi `i` chạy từ `0` đến `n - 2`).
 
-**Tại sao không phải `n` lần mà lại là `n - `1?**
+**Tại sao không phải `n` lần mà lại là `n - 1`?**
 
 - `Giải thích`: Mỗi lần chạy vòng lặp ngoài, phần tử lớn nhất trong mảng (hoặc dãy con đang xem xét) sẽ "nổi lên" cuối mảng sau vòng lặp trong. Sau mỗi lần lặp, phần tử lớn nhất này đã ở vị trí đúng của nó, và do đó không cần phải kiểm tra nó nữa trong các vòng lặp tiếp theo.
   - `Ví dụ`: Sau lần lặp đầu tiên, phần tử lớn nhất sẽ nằm ở cuối mảng, sau lần lặp thứ hai, phần tử lớn thứ hai sẽ ở đúng vị trí cuối cùng ngoài cùng, và cứ như vậy. Do đó, sau `n - 1` lần, mảng sẽ được sắp xếp hoàn toàn.
