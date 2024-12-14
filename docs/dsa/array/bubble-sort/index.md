@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Bubble sort
 
 Sắp xếp nổi bọt là một thuật toán sắp xếp đơn giản, hoạt động bằng cách so sánh các cặp phần tử liền kề trong mảng và hoán đổi chúng nếu chúng không theo thứ tự mong muốn (tăng dần hoặc giảm dần). Thuật toán này tiếp tục lặp đi lặp lại quá trình này cho đến khi không còn phần tử nào cần hoán đổi.
