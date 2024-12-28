@@ -13,17 +13,17 @@ Dùng để chèn dữ liệu vào giao diện HTML.
 - Sử dụng cú pháp `{{ }}` để hiển thị dữ liệu từ thành phần Vue.
 - Kết quả tự động cập nhật khi dữ liệu thay đổi.
 
-```vue
+```html
 <template>
   <p>{{ message }}</p>
 </template>
 
 <script>
-export default {
-  data() {
-    return { message: "Hello, Vue!" };
-  },
-};
+  export default {
+    data() {
+      return { message: "Hello, Vue!" };
+    },
+  };
 </script>
 ```
 
@@ -42,7 +42,7 @@ v-bind:attribute="expression"
 - **attribute**: Là thuộc tính HTML mà bạn muốn gắn dữ liệu (ví dụ: `href`, `src`, `class`, `style`, v.v.).
 - **expression**: Là một biểu thức JavaScript hoặc giá trị từ data/component.
 
-```vue
+```html
 <template>
   <button :disabled="isDisabled">Click me</button>
   <img :src="imageUrl" alt="Example Image" />
@@ -51,12 +51,12 @@ v-bind:attribute="expression"
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from "vue";
 
-const id = ref("id-vue");
-const className = ref("className");
-const imageUrl = ref("url");
-const isDisabled = ref(true);
+  const id = ref("id-vue");
+  const className = ref("className");
+  const imageUrl = ref("url");
+  const isDisabled = ref(true);
 </script>
 ```
 
@@ -72,7 +72,7 @@ Directives được bắt đầu bằng từ khóa `v-` trong Vue.js. Mỗi dire
 - `v-model`
 - ...
 
-```vue
+```html
 <template>
   <a v-bind:href="url">Visit Vue.js</a>
   <a v-if="true"> Display content </a>
@@ -81,12 +81,12 @@ Directives được bắt đầu bằng từ khóa `v-` trong Vue.js. Mỗi dire
 </template>
 
 <script setup>
-import { ref } from "vue";
+  import { ref } from "vue";
 
-const url = ref("url");
-const items = ref(["Vue", "React", "Angular"]);
-const handleClick = () => {
-  // click
-};
+  const url = ref("url");
+  const items = ref(["Vue", "React", "Angular"]);
+  const handleClick = () => {
+    // click
+  };
 </script>
 ```
