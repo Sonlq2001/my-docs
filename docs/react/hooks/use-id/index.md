@@ -20,7 +20,7 @@ const id = useId();
 
 - `id`: Một chuỗi ID duy nhất mà bạn có thể sử dụng trong DOM, thuộc tính, hoặc bất kỳ nơi nào yêu cầu định danh.
 
-## **Khi nào nên dùng `useId`?**
+## Khi nào nên dùng `useId`?
 
 - **Gắn ID vào các phần tử DOM**: Khi bạn cần một ID duy nhất để liên kết các phần tử trong HTML (ví dụ: `<label>` và `<input>`).
 
