@@ -1,6 +1,6 @@
 ---
 sidebar_position: 3
-title: "createContext"
+title: createContext
 ---
 
 `createContext` là một API được cung cấp bởi React để quản lý và chia sẻ dữ liệu giữa các thành phần (components) mà không cần truyền props qua từng cấp của cây thành phần (component tree).

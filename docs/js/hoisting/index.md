@@ -1,6 +1,6 @@
 ---
 sidebar_position: 16
-title: "Hoisting"
+title: Hoisting
 ---
 
 **Hoisting** là một cơ chế trong JavaScript mà **các khai báo biến, hàm, hoặc lớp** được "đưa lên đầu" phạm vi trước khi mã được thực thi. Điều này có nghĩa là bạn có thể sử dụng các biến hoặc hàm trong mã của mình trước khi chúng được khai báo.

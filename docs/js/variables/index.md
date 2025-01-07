@@ -265,3 +265,40 @@ console.log(variableConst); // error
 let variableLet = "hello";
 const variableConst = "world";
 ```
+
+## Note
+
+####  Kiểu dữ liệu nguyên thủy (Primitive Types)
+
+- Bao gồm: `number`, `string`, `boolean`, `null`, `undefined`, `symbol`, và `bigint`.
+- Khi truyền vào hàm, JavaScript sử dụng cơ chế **truyền bằng giá trị** (pass-by-value).
+  - Điều này có nghĩa là chỉ giá trị của biến được sao chép và truyền vào tham số của hàm.
+  - Biến gốc không bị ảnh hưởng bởi thay đổi trong hàm.
+
+```js
+let number = 10;
+
+function modify(value) {
+  value = 20; // Thay đổi giá trị value
+}
+
+modify(value);
+console.log(number); // Output: 10
+```
+
+#### Kiểu dữ liệu tham chiếu (Reference Types)
+
+- Bao gồm: `object`, `array`, và `function`.
+- Khi truyền vào hàm, JavaScript vẫn sử dụng **pass-by-value**, nhưng giá trị được sao chép là **tham chiếu** đến đối tượng.
+  - Điều này có nghĩa là nếu thay đổi thuộc tính của đối tượng, đối tượng gốc cũng bị thay đổi.
+
+```js
+let obj = { value: 10 };
+
+function modify(obj) {
+  obj.value = 20; // Thay đổi thuộc tính của đối tượng
+}
+
+modify(obj);
+console.log(obj.value); // Output: 20
+```

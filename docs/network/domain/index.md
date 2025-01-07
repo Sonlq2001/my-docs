@@ -1,6 +1,6 @@
 ---
 sidebar_position: 5
-title: "Domain"
+title: Domain
 ---
 
 ![ex10](../images/ex10.jpg)
